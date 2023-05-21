@@ -10,8 +10,8 @@
 
 <body>
     <select name="" id="">
-        <option value=""></option>
-    </select>
+        <option th:each="pokemon : ${pokeList}" th:value="${pokemon}" th:text="${pokemon}"></option>
+    </select>    
 </body>
 
 </html>
