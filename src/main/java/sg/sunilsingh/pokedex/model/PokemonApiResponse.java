@@ -12,4 +12,5 @@ public class PokemonApiResponse {
     public void setResults(List<PokemonResult> results) {
         this.results = results;
     }
+    
 }

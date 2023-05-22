@@ -14,6 +14,7 @@ public class PokemonService {
     
     public List<String> getPokemonNames() {
         String apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+        
         RestTemplate restTemplate = new RestTemplate();
         PokemonApiResponse response = restTemplate.getForObject(apiUrl, PokemonApiResponse.class);
 
@@ -21,6 +22,7 @@ public class PokemonService {
         if (response != null && response.getResults() != null) {
             for (PokemonResult result : response.getResults()) {
                 pokemonNames.add(result.getName());
+                pokemonNames.add(result.getUrl().replace("https://pokeapi.co/api/v2/pokemon/", "").replace("/", ""));
             }
         }
 
