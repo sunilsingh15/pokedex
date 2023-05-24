@@ -21,8 +21,7 @@ public class PokemonService {
         List<String> pokemonNames = new ArrayList<>();
         if (response != null && response.getResults() != null) {
             for (PokemonResult result : response.getResults()) {
-                pokemonNames.add(result.getName());
-                pokemonNames.add(result.getUrl().replace("https://pokeapi.co/api/v2/pokemon/", "").replace("/", ""));
+                pokemonNames.add(result.getName().substring(0, 1).toUpperCase() + result.getName().substring(1));
             }
         }
 
