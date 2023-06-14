@@ -52,6 +52,9 @@ public class PokedexService {
                 p.setType(p.getType() + typesArray.get(i).asJsonObject().getJsonObject("type").getString("name") + ", ");
             }
 
+            // remove trailing comma from for loop
+            p.setType(p.getType().substring(0, p.getType().length() - 2));
+
             JsonObject sprites = secondObj.getJsonObject("sprites");
             p.setImageURL(sprites.getString("front_default"));
         }

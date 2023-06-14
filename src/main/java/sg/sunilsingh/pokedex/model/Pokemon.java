@@ -5,7 +5,7 @@ public class Pokemon {
     private String id;
     private String name;
     private String imageURL;
-    private String type;
+    private String type = "";
 
     public String getId() {
         return id;

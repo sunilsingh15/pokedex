@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" href="styles.css">
     <title>Sunil's Pokédex</title>
 </head>
 
@@ -12,11 +14,12 @@
 
     <h2>Sunil's Pokédex</h2>
 
-    <div th:each="pokemon : ${pokeData}">
-        <img th:src="@{${pokemon.imageURL}}" alt="">
-        <p><span th:text="*{pokemon.id}"></span></p>
-        <p><span th:text="*{pokemon.name}"></span></p>
-        <p><span th:text="*{pokemon.type}"></span></p>
+    <div class="container">
+        <div th:each="pokemon : ${pokeData}" class="pokemon">
+            <img th:src="@{${pokemon.imageURL}}" alt="">
+            <p><span th:text="*{pokemon.id}"></span>. <span th:text="*{pokemon.name}"></span></p>
+            <p><span th:text="*{pokemon.type}"></span></p>
+        </div>
     </div>
 </body>
 
