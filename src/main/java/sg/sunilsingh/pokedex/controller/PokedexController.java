@@ -8,20 +8,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import sg.sunilsingh.pokedex.service.PokemonService;
+import sg.sunilsingh.pokedex.model.Pokemon;
+import sg.sunilsingh.pokedex.service.PokedexService;
 
 @Controller
 @RequestMapping
 public class PokedexController {
 
     @Autowired
-    PokemonService service;
+    PokedexService service;
     
     @GetMapping
     public String index(Model model){ 
 
-        List<String> pokeList = service.getPokemonNames();
-        model.addAttribute("pokeList", pokeList);
+        List<Pokemon> pokeData = service.getPokemonData();
+        model.addAttribute("pokeData", pokeData);
 
         return "index";
     }
